@@ -12,9 +12,9 @@ namespace words_search {
     public:
         void loadDataFromFile(const std::string &fname);
         void loadWords(const StringVector &words);
-        void searchWords();
+        void searchSentences();
 
-        StringVector getSearchResult() const;
+        StringVector result() const;
 
     private:
         void splitDataIntoSentences();

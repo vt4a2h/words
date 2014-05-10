@@ -39,7 +39,7 @@ namespace words_search {
         words_.assign(words.begin(), words.end());
     }
 
-    void SearchEngine::searchWords()
+    void SearchEngine::searchSentences()
     {
         using namespace boost;
 
@@ -49,7 +49,7 @@ namespace words_search {
         bool wflag(true);
         for (auto s : sentences_) {
             for (auto w : words_) {
-                word  = (format(kRegexWord_) % w).str();
+                word.set_expression((format(kRegexWord_) % w).str(), regex::icase);
                 wflag = regex_match(s, word);
                 if (!wflag) break;
             }
@@ -57,7 +57,7 @@ namespace words_search {
         }
     }
 
-    StringVector SearchEngine::getSearchResult() const
+    StringVector SearchEngine::result() const
     {
         return result_;
     }

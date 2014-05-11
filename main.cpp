@@ -29,7 +29,7 @@ int main(int argc, char **argv)
                     std::copy(begin(result), end(result),
                               std::ostream_iterator<std::string>(std::cout, "\n"));
                 } else {
-                    std::cout << "sentences not found" << std::endl;
+                    std::cout << "Sentences not found." << std::endl;
                 }
 
                 std::cout << "\nEnter words separated by spaces:\n> ";
@@ -47,7 +47,7 @@ int main(int argc, char **argv)
     }
 
     std::cout << "First argument must be file path.\n"
-                 "For example: ./words \"foo.txt\""
+                 "For example: ./words foo.txt"
               << std::endl;
     return -1;
 }
